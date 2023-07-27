@@ -129,7 +129,8 @@ X = np.asarray(skin_df_balanced['image'].tolist())
 X = X/255. # Scale values to 0-1. You can also used standardscaler or other scaling methods.
 Y=skin_df_balanced['label'] #Assign label values to Y
 Y_cat = to_categorical(Y, num_classes=7) #Convert to categorical as this is a multiclass classification problem
-#Split to training and testing. Get a very small dataset for training as we will be 
+#Split to training and testing. Get a very small dataset for training as we will be
+from sklearn.model_selection import train_test_split
 # fitting it to many potential models. 
 x_train_auto, x_test_auto, y_train_auto, y_test_auto = train_test_split(X, Y_cat, test_size=0.95, random_state=42)
 
